@@ -63,31 +63,41 @@ convertMonthsToMinutes(2)
 function convertDaysToSelected(dayCount, convertType) {
 
     switch (convertType) {
-        case "0":
+        case "minutes":
             let convertToMinutes = (dayCount * 24) * 60;
             console.log(`${convertToMinutes} minutes`)
             break;
-        case "1":
+        case "hours":
             let convertToHours = dayCount * 24;
             console.log(`${convertToHours} hours`)
             break;
-        case "2":
+        case "weeks":
             let daysRemainToWeek = dayCount % 7;
             let convertToWeeks = (daysCount - daysRemainToWeek) / 7;
             console.log(`${convertToWeeks} weeks`)
             break;
-        case "3":
+        case "months":
             let daysRemainToMonth = dayCount % 30;
             let convertToMonths = (dayCount - daysRemainToMonth) / 30;
             console.log(`${convertToMonths} months`)
             break;
-        case "4":
+        case "years":
             let daysRemainToYear = dayCount % 365;
             let convertToYears = (dayCount - daysRemainToYear) / 365;
-            console.log(`${convertToYears}`)
+            console.log(`${convertToYears} years`)
             break;
-        default:
-            console.log(`${dayCount * 24} hours`)
     }
 }
-convertDaysToSelected(10,1)
+
+convertDaysToSelected(12, 'minutes')
+
+function numberDivisionWithRemain(num1, num2) {
+    let numberRemain = num1 % num2;
+    if (numberRemain === 0) {
+        console.log(`Number ${num1} divides from ${num2}.`)
+    } else {
+        console.log(`Number ${num1} doesn\'t divide from number ${num2} and remain is ${numberRemain}.`)
+    }
+}
+
+numberDivisionWithRemain(20, 5)
