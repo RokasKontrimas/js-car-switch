@@ -27,14 +27,10 @@ if (num21 >= num22 && num21 >= num23 && num21 >= num24 && num21 >= num25) {
     console.log(`Number ${num21} is biggest`)
 } else if (num22 >= num21 && num22 >= num23 && num22 >= num24 && num21 >= num25) {
     console.log(`Number ${num22} is biggest`)
-
 } else if (num23 >= num21 && num23 >= num22 && num23 >= num24 && num23 >= num25) {
     console.log(`Number ${num23} is biggest`)
-
 } else if (num24 >= num21 && num24 >= num22 && num24 >= num23 && num24 >= num25) {
     console.log(`Number ${num24} is biggest`)
-
 } else if (num25 >= num21 && num25 >= num22 && num25 >= num23 && num24 >= num24) {
     console.log(`Number ${num25} is biggest`)
-
 }
