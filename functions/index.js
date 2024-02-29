@@ -1,5 +1,5 @@
 function convertYears(humanYear) {
-    if (typeof humanYear === 'string' || !humanYear) {
+    if (!humanYear || typeof humanYear === 'string') {
         // console.log(humanYear)
         console.error('Year cannot be string or empty!')
     } else {
@@ -8,13 +8,13 @@ function convertYears(humanYear) {
     }
 }
 
-convertYears(12)
+convertYears(null)
 
 function getBookReadGoal(bookCount) {
-    let readTime = 365 / bookCount;
     if (typeof bookCount === 'string' || !bookCount) {
         console.error('This function doesn\'t accept wrong parameters')
     } else {
+        let readTime = 365 / bookCount;
         console.log(`To read ${bookCount} books in one year you will have ${Math.round(readTime)} days to read one book`)
     }
 }
@@ -59,3 +59,35 @@ function convertMonthsToMinutes(monthCount) {
 }
 
 convertMonthsToMinutes(2)
+
+function convertDaysToSelected(dayCount, convertType) {
+
+    switch (convertType) {
+        case "0":
+            let convertToMinutes = (dayCount * 24) * 60;
+            console.log(`${convertToMinutes} minutes`)
+            break;
+        case "1":
+            let convertToHours = dayCount * 24;
+            console.log(`${convertToHours} hours`)
+            break;
+        case "2":
+            let daysRemainToWeek = dayCount % 7;
+            let convertToWeeks = (daysCount - daysRemainToWeek) / 7;
+            console.log(`${convertToWeeks} weeks`)
+            break;
+        case "3":
+            let daysRemainToMonth = dayCount % 30;
+            let convertToMonths = (dayCount - daysRemainToMonth) / 30;
+            console.log(`${convertToMonths} months`)
+            break;
+        case "4":
+            let daysRemainToYear = dayCount % 365;
+            let convertToYears = (dayCount - daysRemainToYear) / 365;
+            console.log(`${convertToYears}`)
+            break;
+        default:
+            console.log(`${dayCount * 24} hours`)
+    }
+}
+convertDaysToSelected(10,1)
